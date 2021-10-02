@@ -1,8 +1,8 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background: #22c1c3;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #C1FFD7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #C1FFD7, #FDB9FC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #C1FFD7, #FDB9FC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -10,11 +10,13 @@ background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, F
 h1{
     background:#2980b9;
     color:white;
-    margin: 0;
+    margin: 50px;
     padding: 10px 20px;
     text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 50px;
+
+    text-align:center;
+    font-family: Merriweather;
 }
 ul{
     list-style:none;
@@ -23,7 +25,7 @@ ul{
 }
 
 .fa-plus{
-  float: right;  
+  float: right;
 }
 
 li{
@@ -53,29 +55,43 @@ width: 40px;
 opacity: 1.0;
 }
 
-input{
-    font-size: 18px;
-    background: #f7f7f7;
-    width: 100%;
-    padding:13px 13px 13px  20px;
-    color: #2980b9;
-    box-sizing: border-box;
-    border: 3px solid rgba(0,0,0,0);
+
+.input{
+  width:100%;
+  padding:10px;
+  background: none;
+  font-size: 18px;
+  color: #000000;
+  outline:none;
+  border:none;
+  border-bottom: 2px solid #000000;
+  margin-top: 50px;
 }
-input:focus{
-    background:white;
-    border: 3px solid #2980b9;
-    outline:none ;
-    
+.task{
+  background: rgba(255, 255, 255, 0.5);
+  color:#000;
+  width:100%;
+  padding: 18px;
+  margin:6px 0;
+
+}
+.task i{
+  float:right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.container{
+  max-width: 800px;
+  margin:auto;
+  padding:10px;
+  color:#000000;
+}
+.comp .task{
+  background: rgba(0, 0, 0, .5);
+  color:#000000;
 }
 
-#container{
-   
-    width: 360px;
-    margin: 100px auto;
-    background: #f7f7f7;
-    box-shadow: 0 0 3px rgb(0,0,0.1);
-}
+
 
 .compeleted{
     color:gray;

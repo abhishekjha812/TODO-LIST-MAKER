@@ -1,32 +1,26 @@
-//check off specific todos by clicking
-
-$("ul").on("click" , "li" , function () {
-    
-   $(this).toggleClass("compeleted");
-
-});
-
-//click on X to delete todo
- $("ul").on("click ", "span",function (event) {
-    $(this).parent().fadeOut(500,function () {
-     $(this).remove();       
-    })                 // TO SPARE THE SPAN (X) AND DELTE WHOLE li
-    event.stopPropagation();
- });
 
 
-//EVENT BUBBLE ^^
+$(".input").on("keyup",function(e){
+     if(e.keyCode==13 && $(".input").val()!="")
+     {
+       var task = $("<div class='task'></div>").text($(".input").val());
+       var del = $("<i class = 'fas fa-trash-alt'></i>").click(function(){
+         var p = $(this).parent();
+         p.fadeOut(function(){
+           p.remove();
+         });
+       });
+       var check= $("<i class ='fas fa-check'></i>").click(function(){
+         var p = $(this).parent();
+         p.fadeOut(function(){
+           $(".comp").append(p);
+           p.fadeIn();
+         });
+         $(this).remove();
+       });
+       task.append(del,check);
+       $(".notcomp").append(task);
+       $(".input").val("");
+     }
 
-$("input[type='text']").keypress(function (event) {
-  if(event.which === 13){
-   //grabbing new todo from input
-   var todoText = $(this).val();
-   $(this).val("");
-    //create a new li and add to ul
-     $("ul").append("<li> <span><i class='fas fa-trash'></i></span>" + todoText +"</li>")
-  }
-});
-
-$(".fa-plus").click(function () {
-   $("input[type='text']").fadeToggle();
-});
+   });
